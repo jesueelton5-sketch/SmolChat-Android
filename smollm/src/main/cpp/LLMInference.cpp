@@ -106,7 +106,7 @@ LLMInference::startCompletion(const char *query) {
     // Try Jinja rendering first with tools defined to prevent "tojson on Undefined" errors.
     // If Jinja fails (e.g. unsupported filters like lstrip), fall back to legacy rendering.
     inputs.use_jinja = true;
-    inputs.chat_template_kwargs["tools"] = "[]";
+    inputs.chat_template_kwargs["tools"] = "null";
 
     std::string prompt;
     bool usedJinja = true;
